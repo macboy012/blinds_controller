@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve blinds controller
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+
+WorkingDirectory=/root/blinds_control/uwsgi/blinds
+ExecStart=uwsgi --ini blinds.ini
+
+[Install]
+WantedBy=multi-user.target
